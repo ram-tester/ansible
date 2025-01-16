@@ -10,7 +10,7 @@
     vars:
       SAL: 2000
     ansible.builtin.debug:
-      msg: The employess {{ EMPNAME }} sal is {{ SAL }} and dept is: {{ DEPT }}
+      msg: The employess {{ EMPNAME }}, sal is {{ SAL }} and dept is: {{ DEPT }}
   - name: print the variable
     ansible.builtin.debug:
-      msg: "The employess {{ EMPNAME }} sal is {{ SAL }} and dept is: {{ DEPT }}"
+      msg: The employess {{ EMPNAME }} sal is {{ SAL }} and dept is: {{ DEPT }}
