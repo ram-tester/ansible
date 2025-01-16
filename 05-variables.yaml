@@ -1,0 +1,12 @@
+- name: variables
+  hosts: local
+  connection: local
+  vars: # play level variables
+  NAME: "jai"
+  SAL: 1000
+  DEPT: storage
+  HRS: 08HRS
+  tasks:
+  - name: print the variables
+    ansible.builtin.debug:
+    msg: The employee {{ NAME }} and his salary {{ SAL }}, works in {{ DEPT }} and no of hrs he used to work {{ HRS }}
