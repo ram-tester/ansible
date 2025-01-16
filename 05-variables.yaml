@@ -2,10 +2,10 @@
   hosts: local
   connection: local
   vars: # play level variables
-  EMPNAME: "jai"
-  SAL: 1000
-  DEPT: storage
-  HRS: 08HRS
+    EMPNAME: "jai"
+    SAL: 1000
+    DEPT: storage
+    HRS: 08HRS
   tasks:
   - name: print the variables
     ansible.builtin.debug:
