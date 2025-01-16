@@ -1,0 +1,6 @@
+- name: inventory variables demo
+  hosts: local
+  connection: local
+    - name: print course info with inventory variables
+      ansible.builtin.debug:
+        msg: course is {{ COURSE }} and time {{ DURATION }} and trainee {{ TRAINER }}
