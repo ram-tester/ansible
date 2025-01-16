@@ -1,0 +1,16 @@
+- name: task level vars demo
+  hosts: local
+  connection: local
+  vars:
+    EMPNAME: "JAI"
+    SAL: 1000
+    DEPT:  storage
+  tasks:
+  - name: print the task level variables
+    vars:
+      SAL: 2000
+    ansible builin.debug:
+      msg: "The employess {{ EMPNAME }} sal is {{ SAL }} and dept is: {{ DEPT }}"
+  - name: print the variable
+    ansible.builtin.debug:
+    msg: "The employess {{ EMPNAME }} sal is {{ SAL }} and dept is: {{ DEPT }}"
