@@ -9,4 +9,4 @@
   tasks:
   - name: print the variables
     ansible.builtin.debug:
-    msg: The employee {{ EMPNAME }} and his salary {{ SAL }}, works in {{ DEPT }} and no of hrs he used to work {{ HRS }}
+      msg: The employee {{ EMPNAME }} and his salary {{ SAL }}, works in {{ DEPT }} and no of hrs he used to work {{ HRS }}
