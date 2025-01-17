@@ -27,3 +27,15 @@
         - { 'key': 'sal', 'value': '1000' }
     ansible.builtin.debug:
       msg: "course info {{ course | items2dict }}"
+
+  - name: convert name to upper case
+    vars:
+      name: "jai"
+    ansible.builtin.debug:
+      msg: "name in upper case {{ name | upper }}"
+
+  - name: convert to lowercase
+    vars:
+      name: "JAYARAM"
+    ansible.builtin.debug:
+      msg: " name in lower case: {{ name | lower }}"
