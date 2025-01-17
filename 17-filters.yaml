@@ -39,3 +39,17 @@
       name: "JAYARAM"
     ansible.builtin.debug:
       msg: " name in lower case: {{ name | lower }}"
+
+  - name: find min and max
+    vars:
+      numbers: [23,12,1,34,45,33]
+    ansible.builtin.debug:
+      msg: "min num is: {{ numbers | min }} and max num is {{ numbers | max }}"
+
+  - name: check valid ip address
+    vars:
+      ip: "192.168.1.1"
+    ansible.builtin.debug:
+      msg: "{{ ip | ansible.utils.ipaddr }}"
+      
+
