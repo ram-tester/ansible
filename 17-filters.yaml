@@ -14,8 +14,8 @@
   - name: convert map into list
     vars:
       course:
-        subject: "Devops"
-        trainer: "reddy"
+        subject: Devops
+        trainer: reddy
         duration: 120
     ansible.builtin.debug:
-      msg: "the course is: {{ course | items2dict }}"
+      msg: "the course info: {{ course | dict2items }}"
