@@ -19,3 +19,11 @@
         duration: 120
     ansible.builtin.debug:
       msg: "the course info: {{ course | dict2items }}"
+
+  - name: convert lst into map
+    vars:
+      course:
+        - { 'key': 'name', 'value': 'jai' }
+        - { 'key': 'sal', 'value': '1000' }
+    ansible.builtin.debug:
+      msg: "course info {{ course | items2dict }}"
