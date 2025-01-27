@@ -1,0 +1,32 @@
+- name: create ec2 and s3 update
+  hosts: local
+  connection: local
+  vars:
+    subnet_id: subnet-09f730f5476591eb7
+    sg_id: sg-0a60a67d6da6236c9
+    ami_id: ami-09c813fb71547fc4f
+    instance_type: t3.micro
+    zone: altodevops.online
+    instances:
+    - mysql
+    - backend
+    - frontend
+    tasks:
+    - name: Install python libraries
+      ansible.builtin.pip:
+        name: "{{ item }}"
+        executable: pip3.9
+      loop:
+        - boto3
+        - botocore
+    - name: create ec2 instances
+      amazon.aws.ec2_instances:
+        name: "{{ item }}"
+        subnet_id: "{{ subnet_id }}"
+        sg_id: "{{ sg_id }}"
+        instance_type: "{{ instance_type }}"
+        zone: "{{ t3.micro }}"
+      loop: "{{ instances }}"
+      register: ec2_info
+
+
