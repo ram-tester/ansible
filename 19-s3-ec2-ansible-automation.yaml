@@ -11,22 +11,22 @@
     - mysql
     - backend
     - frontend
-    tasks:
-    - name: Install python libraries
-      ansible.builtin.pip:
-        name: "{{ item }}"
-        executable: pip3.9
-      loop:
-        - boto3
-        - botocore
-    - name: create ec2 instances
-      amazon.aws.ec2_instances:
-        name: "{{ item }}"
-        subnet_id: "{{ subnet_id }}"
-        sg_id: "{{ sg_id }}"
-        instance_type: "{{ instance_type }}"
-        zone: "{{ t3.micro }}"
-      loop: "{{ instances }}"
-      register: ec2_info
+  tasks:
+  - name: Install python libraries
+    ansible.builtin.pip:
+      name: "{{ item }}"
+      executable: pip3.9
+    loop:
+    - boto3
+    - botocore
+  - name: create ec2 instances
+    amazon.aws.ec2_instances:
+      name: "{{ item }}"
+      subnet_id: "{{ subnet_id }}"
+      sg_id: "{{ sg_id }}"
+      instance_type: "{{ instance_type }}"
+      zone: "{{ t3.micro }}"
+    loop: "{{ instances }}"
+    register: ec2_info
 
 
